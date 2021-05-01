@@ -1,5 +1,12 @@
+import json
+
 def lambda_handler(event, context):
-    message = 'Hello {} {}!'.format(event['first_name'], event['last_name'])  
-    return { 
-        'message' : message
+    if 'queryStringParameters' in event and 'name' in event['queryStringParameters']:
+        msg = 'Hola  {}!'.format(event["queryStringParameters"]['name'])
+    else:
+        msg = 'Hola CICE!'
+    return{  
+        'statusCode': 200,
+        'body': json.dumps(msg)
     }
+
