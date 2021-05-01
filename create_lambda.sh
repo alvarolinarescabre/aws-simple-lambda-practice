@@ -10,7 +10,7 @@ aws iam attach-role-policy --role-name lambda-execute-rol --policy-arn arn:aws:i
 aws lambda create-function --function-name chamo-demo-lambda --zip-file fileb://main.zip  --handler main.lambda_handler --runtime python3.8 --role arn:aws:iam::663762823706:role/lambda-execute-rol
 
 # Probamos la función lambda
-aws lambda invoke --function-name chamo-demo-lambda --payload '{"first_name": "Chamo", "last_name": "Linares"}' output.txt
+aws lambda invoke --function-name chamo-demo-lambda --payload '{"name": "Chamo"}' output.txt
 
 # Mostramos resultado
 cat output.txt
