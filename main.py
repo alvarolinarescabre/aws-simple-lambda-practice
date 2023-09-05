@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     if name:
         msg = 'Hola {}!'.format(name['name'])
     else:
-        msg = 'Hola CICE!'
+        msg = 'Hola Chamo =^.^='
     return{  
         'statusCode': 200,
         'body': json.dumps(msg)
