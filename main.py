@@ -1,12 +1,15 @@
-import json
-
 def lambda_handler(event, context):
-    name = event.get('queryStringParameters', None)
-    if name:
-        msg = 'Hola {}!'.format(name['name'])
+
+    if not event['rawQueryString']:
+        name = 'KeepCoder'
     else:
-        msg = 'Hola Chamo =^.^='
-    return{  
+        name = event['queryStringParameters']['name']
+        
+
+    return {
+        'headers': {
+            'Content-Type': 'text/plain; charset=utf-8'
+        },
         'statusCode': 200,
-        'body': json.dumps(msg)
+        'body': f'Hola {name} desde una función Lambda'
     }
