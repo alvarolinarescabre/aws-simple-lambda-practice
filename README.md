@@ -1,2 +1,2 @@
-# cice-lambda-demo
-Repo form CICE example AWS Lambda Demo
+# AWS Simple Lambda Practice
+Repo AWS Simple Lambda Practice
